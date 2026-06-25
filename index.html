@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DREAM//CITY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="gradient-bg"></div>
+  <div class="grid-bg"></div>
+  <div class="ambient-orbs">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">D3M0N//DR34M</a>
+      <div class="nav-themes">
+        <span class="theme-dot active" data-theme="neon" style="background:linear-gradient(135deg,#00f0ff,#ff00aa)" title="NEON"></span>
+        <span class="theme-dot" data-theme="matrix" style="background:linear-gradient(135deg,#00ff88,#006644)" title="MATRIX"></span>
+        <span class="theme-dot" data-theme="sunset" style="background:linear-gradient(135deg,#ff6600,#ff0055)" title="SUNSET"></span>
+        <span class="theme-dot" data-theme="ice" style="background:linear-gradient(135deg,#00ccff,#8844ff)" title="ICE"></span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="active">[00] HOME</a></li>
+        <li><a href="#clock">[01] CLOCK</a></li>
+        <li><a href="#picker">[02] PICKER</a></li>
+        <li><a href="#glitch">[03] GLITCH</a></li>
+        <li><a href="#dice">[04] DICE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <section id="hero">
+    <div class="hero-flare hero-flare-1"></div>
+    <div class="hero-flare hero-flare-2"></div>
+    <div class="hero-scan"></div>
+    <div class="hero-glitch-wrap">
+      <h1 class="hero-glitch" data-text="DREAM//CITY">DREAM//CITY</h1>
+    </div>
+    <p class="hero-sub">A COLLECTION OF <span>NEON</span> TOOLS</p>
+    <div class="hero-line"></div>
+    <p class="hero-tagline">时钟 · 抉择 · 故障 · 运数 —— 在霓虹中，一切皆有可能</p>
+    <div class="scroll-indicator">
+      <div class="arrow"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- clock + pomodoro -->
+  <section id="clock" class="tool-section">
+    <div class="clock-page">
+      <div class="clock-main">
+        <div class="clock-time" id="clock-time">00:00:00</div>
+        <div class="clock-date" id="clock-date">------ --, ----</div>
+        <div class="clock-beat"></div>
+      </div>
+      <div class="pomo-section">
+        <h3># POMODORO</h3>
+        <div class="pomo-display" id="pomo-display">25:00</div>
+        <div class="pomo-controls">
+          <button id="pomo-start">[ START ]</button>
+          <button id="pomo-reset">[ RESET ]</button>
+        </div>
+        <div class="pomo-status" id="pomo-status">// 等待开始</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- random picker -->
+  <section id="picker" class="tool-section">
+    <div class="picker-page">
+      <div class="picker-result-big" id="picker-result">// 等待选择</div>
+      <div class="picker-presets" id="picker-presets"></div>
+      <div class="picker-input-row">
+        <input type="text" id="picker-input" placeholder="自定义添加，回车确认" />
+        <button id="picker-add">[ ADD ]</button>
+      </div>
+      <div class="picker-actions">
+        <button id="picker-spin">[ PICK ]</button>
+        <button id="picker-clear">[ CLEAR ]</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- glitch lab + text info -->
+  <section id="glitch" class="tool-section">
+    <div class="glitch-page">
+      <div class="glitch-main">
+        <input id="glitch-input" type="text" placeholder="输入文字，自动故障..." />
+        <div class="glitch-intensity">
+          <label>INTENSITY</label>
+          <input type="range" id="glitch-intensity" min="1" max="10" value="5" />
+        </div>
+        <div class="glitch-output" id="glitch-output">// 等待输入</div>
+      </div>
+      <div class="textinfo">
+        <div class="textinfo-item">
+          <div class="num" id="textinfo-chars">0</div>
+          <div class="label">CHARS</div>
+        </div>
+        <div class="textinfo-item">
+          <div class="num" id="textinfo-words">0</div>
+          <div class="label">WORDS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- dice + coinflip -->
+  <section id="dice" class="tool-section">
+    <div class="dice-page">
+      <div class="dice-main">
+        <div class="dice-display" id="dice-display">?</div>
+        <button class="dice-btn" id="dice-roll">[ ROLL ]</button>
+        <div class="dice-history" id="dice-history"></div>
+      </div>
+      <div class="coinflip">
+        <div class="coinflip-result" id="coinflip-result">// 抛一次</div>
+        <button class="coinflip-btn" id="coinflip-btn">[ FLIP ]</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>2026 // MADE WITH <span>NEON</span> AND <span>DREAMS</span></p>
+  </footer>
+
+  <!-- modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">SELECT ITEMS</h3>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <input class="modal-search" id="modal-search" type="text" placeholder="搜索选项..." />
+        <div class="modal-item-list" id="modal-item-list"></div>
+        <div class="modal-custom-add">
+          <input type="text" id="modal-custom-input" placeholder="自定义添加..." />
+          <button id="modal-custom-add-btn">[ + ]</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-cancel">CANCEL</button>
+        <button class="modal-confirm" id="modal-confirm">CONFIRM</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
+</body>
+</html>
